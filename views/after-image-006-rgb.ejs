@@ -349,6 +349,7 @@
   function createSlider(element, color, min, max) {
     noUiSlider.create(element, {
       start: [color],
+      direction: 'rtl',
       orientation: 'vertical',
       connect: true,
       range: {
@@ -383,9 +384,9 @@
   })
 
   //boom,boom,boom
-  createSlider(rSliderEl, SLIDER_START_VALUES[0], 0, USE_HSL ? 360 : 255)
-  createSlider(gSliderEl, SLIDER_START_VALUES[1], 0, USE_HSL ? 1 : 255)
-  createSlider(bSliderEl, SLIDER_START_VALUES[2], 0, USE_HSL ? 1 : 255)
+  createSlider(rSliderEl,SLIDER_START_VALUES[0],0,  USE_HSL ? 360 : 255)
+  createSlider(gSliderEl,SLIDER_START_VALUES[1],0,  USE_HSL ? 1 : 255)
+  createSlider(bSliderEl,SLIDER_START_VALUES[2],0,  USE_HSL ? 1 : 255)
 
 
   //!!!!!!!!!!! we hide this in the .CSS

@@ -7,7 +7,7 @@ def main():
         print(i)
         i += 1
         sys.stdout.flush()
-        sleep(0.1)
+        sleep(0.02)
 
 # Start process
 if __name__ == '__main__':

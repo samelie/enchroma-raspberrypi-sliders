@@ -6393,10 +6393,18 @@ var Socket = function Socket() {
   var gSliderEl = document.querySelector(".slider--green");
   var bSliderEl = document.querySelector(".slider--blue");
 
+  var noUiSliders = [rSliderEl.noUiSlider, gSliderEl.noUiSlider, bSliderEl.noUiSlider];
+
   this._socket = (0, _socket2.default)(window.SOCKET_URL);
 
   this._socket.on("color", function (data) {
-    console.log(data);
+    var c = data.split(" ");
+    for (var i = 0; i < data.length; i++) {
+      if (noUiSliders[i]) {
+        var v1 = parseInt(c[i] / 1023 * 255);
+        noUiSliders[i].set([v1]);
+      }
+    }
   });
 };
 
